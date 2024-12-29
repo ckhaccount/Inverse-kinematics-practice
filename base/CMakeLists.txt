@@ -1,0 +1,15 @@
+project(base)
+
+aux_source_directory(bsp src)
+aux_source_directory(cap_comm src)
+aux_source_directory(common src)
+aux_source_directory(cv_comm src)
+aux_source_directory(imu src)
+aux_source_directory(imu/driver src)
+aux_source_directory(motor src)
+aux_source_directory(motor/driver src)
+aux_source_directory(referee_comm src)
+aux_source_directory(remote src)
+aux_source_directory(servo src)
+
+add_library(base STATIC ${src})

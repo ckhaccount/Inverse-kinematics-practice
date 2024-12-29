@@ -1,0 +1,1 @@
+将usbd_cdc.c和复制到 {.ioc文件目录}/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src

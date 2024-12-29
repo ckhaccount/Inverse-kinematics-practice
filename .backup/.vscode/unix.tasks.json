@@ -1,0 +1,48 @@
+{
+	"version": "2.0.0",
+	"options": {
+		"cwd": "${workspaceFolder}/build"
+	},
+	"tasks": [
+		{
+			"label": "cmake",
+			"type": "shell",
+			"command": "cmake",
+			"args": [
+				"..",
+				"-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+				"-DCMAKE_PRINT_COMPILE_OPTION=false"
+			]
+		},
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"-j8"
+			],
+			"dependsOn":[
+				"cmake"
+			]
+		},
+		{
+			"label": "clean",
+			"type": "shell",
+			"command": "make",
+			"args": [
+				"clean"
+			]
+		},
+		{
+			"label": "download",
+			"type": "shell",
+			"command": [
+				"openocd",
+				"-f interface/stlink.cfg",
+				"-f target/stm32f4x.cfg",
+				"-c 'program RM_frame.elf verify reset exit'"
+			],
+			"problemMatcher": []
+		}
+	]
+}

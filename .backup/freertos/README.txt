@@ -1,0 +1,1 @@
+将本目录下RVDS文件夹复制到 {.ioc文件目录}/Middlewares/Third_Party/FreeRTOS/Source/portable/ 目录下，替换原本的RVDS文件夹
